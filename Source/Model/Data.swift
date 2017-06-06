@@ -25,6 +25,10 @@ struct Data {
   let gender: Gender
   let age: UInt8?
 
+  static var all: [Data] {
+    return [foo, bar, baz, qux, xyzzy, fred, garply]
+  }
+
   static let foo: Data =
     Data(id: 1, title: "Mr", name: "Tim Korotky", details: "Tall dude. Does some developing.", gender: .male, age: 24)
 
