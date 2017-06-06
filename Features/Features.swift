@@ -24,7 +24,7 @@ final class Features: XCTestCase {
   }
 
   func testAndyIsANoob() {
-    while !funky.staticTexts["ID: 7"].exists {
+    while !funky.staticTexts["ID: 6"].exists {
       nextButton.tap()
     }
 
