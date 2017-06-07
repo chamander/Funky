@@ -10,16 +10,16 @@ final class ViewController: UIViewController {
   @IBOutlet private var detailsLabel: UILabel!
   @IBOutlet private var genderAndAgeLabel: UILabel!
 
-  private let data: Array = Data.all
-  private var iterator: IndexingIterator<[Data]>?
+  private let data: Array = Model.all
+  private var iterator: IndexingIterator<[Model]>?
 
   @IBAction private func userDidTapNextButton() {
     displayNext()
   }
 
   private func displayNext() {
-    if let data: Data = iterator?.next() {
-      display(data)
+    if let model: Model = iterator?.next() {
+      display(model)
     } else {
       refreshData() { self.displayNext() }
     }
@@ -30,7 +30,7 @@ final class ViewController: UIViewController {
     handler()
   }
 
-  private func display(_ data: Data) {
+  private func display(_ data: Model) {
     idLabel.text = "ID: \(data.id)"
     titleAndNameLabel.text = "Name: \(data.title) \(data.name)"
     detailsLabel.text = String(describing: data.details)
